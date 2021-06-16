@@ -1,0 +1,52 @@
+Hi, Gabe!
+
+For our skills assessment, we're looking for you to build a very basic Book Review app in Laravel.
+
+The requirements are as follows:
+    1) Users should be able to browse a list of existing books
+
+    2) Users should be able to create books
+        - The Book model should have the following attributes:
+            a) ID (integer, auto increment)
+            b) Name (string, required)
+            c) Author (string, required)
+            d) Publication Date (date, required)
+            e) Cover Photo (required, can be either a url to an external image or 
+                can use an uploaded image (bonus points!))
+
+    3) Users should be able to browse a book's individual page
+        - This page should display all pertinent information for the book, including any reviews
+
+    4) A user should be able to leave a review on a book's page
+        - The Book Review model should have the following attributes:
+            a) ID (integer, auto increment, required)
+            b) Book ID (integer, should be a foreign key referencing the id of the Book model)
+            c) Star Rating (integer, 1-5), required)
+            d) Title (string, max 100 characters)
+                - This field is not required but should be auto-generated if the user chooses not to enter a Title 
+                - The auto-generated review should have every word capitalized based one the first sentence of the review.
+            e) Review (text, required)
+            f) Reviewer Name (required)
+    
+    5) There should be at least two database migration files showing us how you would build out the 
+       tables for the book and book review models.
+
+    6) All forms should be validated on both the front-end and back-end
+
+    7) All pages should include basic styling to make the interface clean.
+        - You may use a CSS framework like Bootstrap or Materialize to provide basic styling out-of-the-box
+        - OR - You may use a free theme found online
+        - OR - You may choose to make your own styling decisions using vanilla CSS rules
+
+
+Additional Notes:
+    - I have provided some work for you to reference to help get you started. This inclues the following:
+        - A Book model class and migration
+        - A Book controller class with sample books provided in the index function
+        - A basic route to the index function on the Book Controller
+
+    - Saving models is not possible due to this environment not having database access.
+      As a result, we don't expect this code to actually save. We just want to see how you would go
+      about writing it.
+
+    - User authentication is NOT required for this exercise. Anonymous interaction is fine.
