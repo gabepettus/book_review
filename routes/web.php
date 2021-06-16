@@ -19,17 +19,17 @@ use Illuminate\Support\Facades\Validator;
 
 Route::get('/', function () {
     $books = Book::orderBy('author','asc')->get();
-    return view('books/booklist', [
+    return view('books/bookList', [
         'books' => $books
     ]);
 });
 
-Route::get('/books', [BookController::class, 'index']);
+// Route::get('/books', [BookController::class, 'index']);
 
 /**
  * Add A New Book
  */
-Route::post('/Book', function (Request $request) {
+Route::post('/book', function (Request $request) {
 
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:5',

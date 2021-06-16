@@ -1,26 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Book Review Skills Test </title>
+@extends('books.index')
+@include('common.errors')
 
-    </head>
+@section('booklist')
 
-    <body>
-        <div class="container">
-            <nav class="navbar navbar-expand-md fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand ">Book Review</a>
-                </div>
-                <ul class="navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Add a Book</a>
-                    </li>
-                </ul>
+<div class="container">
+    <div class="col-sm-offset-2 col-sm-8">
+        <!-- Current Books -->
+        @if (count($books) > 0)
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Current books
             </div>
-            </nav>
-        </div>
 
-        @yield('content')
-    </body>
-</html>
+            <div class="panel-body">
+                <table class="table table-striped task-table">
+                    <thead>
+                        <th>Book</th>
+                        <th>&nbsp;</th>
+                    </thead>
+                    <tbody>
+                        @foreach ($books as $book)
+                            <tr>
+                                <td class="table-text"><div>{{ $book->name }}</div></td>
+
+                                <!-- Book Delete Button -->
+                                <td>
+                                    <form action="{{ url('book/'.$book->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-btn fa-trash"></i>Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @endif
+    </div>
+</div>
+@endsection
