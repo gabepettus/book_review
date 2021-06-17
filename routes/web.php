@@ -20,7 +20,10 @@ use App\Http\Controllers\BookController;
         return view('welcome');
     });
 
-    Route::get('/books', [BookController::class,'index']);
+    // Route::get('/books', [BookController::class,'index']);
+    Route::get('/books', [BookController::class,'list']);
+    Route::get('/book/{book}',  [BookController::class,'details']);
+
     Route::post('/book',  [BookController::class,'create']);
 
     // Route::delete('/book/{book}', 'BookController@destroy');

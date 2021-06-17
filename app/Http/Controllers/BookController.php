@@ -32,11 +32,19 @@ class BookController extends Controller
         return view('books.books')->with(['books' => Book::hydrate($exampleBooks)]);
     }
 
-        /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function list()
+    {
+        $books = Book::orderBy('Author','asc')->get();
+            return view('books.books')->with(['books' => $books ]);
+    }
+
+    public function details($id)
+    {
+        $book = Book::whereId($id)->first();
+            return view('reviews.reviews')->with(['book' => $book ]);
+    }
+
+
     //  Create a new task.
     public function create(Request $request)
     {

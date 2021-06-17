@@ -64,13 +64,13 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Current books
+                        Reviewed Books
                     </div>
 
                     <div class="panel-body">
                         <table class="table table-striped book-table">
                             <thead>
-                                <th>book</th>
+                                <th>Book Author</th>
                                 <th>&nbsp;</th>
                             </thead>
                             <tbody>
@@ -78,14 +78,13 @@
                                     <tr>
                                         <td class="table-text"><div>{{ $book->name }}</div></td>
 
-                                        <!-- book Delete Button -->
+                                        <!-- book details Button -->
                                         <td>
-                                            <form action="{{url('book/' . $book->id)}}" method="POST">
+                                            <form action="{{url('book/' . $book->id)}}" method="GET">
                                                 {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
 
-                                                <button type="submit" id="delete-book-{{ $book->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Delete
+                                                <button type="submit" id="book-{{ $book->id }}" class="btn">
+                                                    <i class="fa fa-btn"></i>Details
                                                 </button>
                                             </form>
                                         </td>
