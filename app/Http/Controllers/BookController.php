@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Book;
+
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BookController extends Controller
 {
@@ -26,6 +29,27 @@ class BookController extends Controller
             ],
         ];
 
-        return view('books.index')->with(['books' => Book::hydrate($exampleBooks)]);
+        return view('books.books')->with(['books' => Book::hydrate($exampleBooks)]);
     }
+
+        /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    //  Create a new task.
+    public function create(Request $request)
+    {
+        // TODO validate
+        $book = new Book;
+
+        $book->name = $request->name;
+        $book->author = $request->author;
+        $book->date_published = $request->date_published;
+        $book->photo = $request->photo;
+
+        $book->save();
+
+        return redirect('/books');
+    }   
 }

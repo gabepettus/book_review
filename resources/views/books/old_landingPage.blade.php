@@ -10,7 +10,7 @@
             <nav class="navbar navbar-expand-md fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand ">Book Review</a>
+                    <a class="navbar-brand ">Book Review junk</a>
                 </div>
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
@@ -21,6 +21,6 @@
             </nav>
         </div>
 
-        @yield('content')
+        @yield('booklist')
     </body>
 </html>

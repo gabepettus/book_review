@@ -1,10 +1,7 @@
 <?php
 
-use App\Http\Controllers\BookController;
-use App\Models\Book;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,42 +14,15 @@ use Illuminate\Support\Facades\Validator;
 |
 */
 
-Route::get('/', function () {
-    $books = Book::orderBy('author','asc')->get();
-    return view('books/bookList', [
-        'books' => $books
-    ]);
-});
 
-// Route::get('/books', [BookController::class, 'index']);
 
-/**
- * Add A New Book
- */
-Route::post('/book', function (Request $request) {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|max:5',
-    ]);
+    Route::get('/books', [BookController::class,'index']);
+    Route::post('/book',  [BookController::class,'create']);
 
-    if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
+    // Route::delete('/book/{book}', 'BookController@destroy');
 
-    $book = new Book;
-    $book->name = $request->name;
-    $book->save();
-
-    return redirect('/');
-});
-
-/**
- * Delete An Existing Book
- */
-Route::delete('/book/{book}', function (Book $book) {
-    $book->delete();
-
-    return redirect('/');
-});
+    // Route::auth();

@@ -1,4 +1,4 @@
-@extends('books.index')
+@extends('books.landingPage')
 @include('common.errors')
 
 @section('booklist')
@@ -6,7 +6,9 @@
 <div class="container">
     <div class="col-sm-offset-2 col-sm-8">
         <!-- Current Books -->
-        @if (count($books) > 0)
+        dd($books)
+        {{-- @if (count($books) > 0) --}}
+        @if (-1 > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
                 Current books
@@ -40,7 +42,11 @@
                 </table>
             </div>
         </div>
+        @else
+        <p> Please add a book to review </p>
+
         @endif
+
     </div>
 </div>
 @endsection
