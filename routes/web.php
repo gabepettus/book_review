@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +15,17 @@ use App\Http\Controllers\BookController;
 |
 */
 
+// Route::get('/', function () { return view('welcome'); });
+Route::get('/', [BookController::class,'list']);
 
+// Route::get('/books', [BookController::class,'index']);
+Route::get('/books', [BookController::class,'list']);
+Route::get('/book/{book}', [BookController::class,'details']);
+Route::post('/book', [BookController::class,'create']);
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+Route::get('/reviews', [ReviewController::class,'list']);
+Route::post('/review', [ReviewController::class,'create']);
 
-    // Route::get('/books', [BookController::class,'index']);
-    Route::get('/books', [BookController::class,'list']);
-    Route::get('/book/{book}',  [BookController::class,'details']);
+// Route::delete('/book/{book}', [BookController::class,'delete']);
 
-    Route::post('/book',  [BookController::class,'create']);
-
-    // Route::delete('/book/{book}', 'BookController@destroy');
-
-    // Route::auth();
+// Route::auth();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Models\Review;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -40,8 +41,11 @@ class BookController extends Controller
 
     public function details($id)
     {
+        // $reviews = Review::where('book_id',$id)->first();
+        $reviews = Review::where('book_id',$id)->orderBy('created_at','desc')->get();
+
         $book = Book::whereId($id)->first();
-            return view('reviews.reviews')->with(['book' => $book ]);
+            return view('reviews.reviews')->with(['book' => $book, 'reviews' => $reviews ]);
     }
 
 

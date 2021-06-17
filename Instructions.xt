@@ -4,6 +4,11 @@ For our skills assessment, we're looking for you to build a very basic Book Revi
 
 The requirements are as follows:
     1) Users should be able to browse a list of existing books
+        TODO: 
+            clean up ui
+                pagination
+                complete data
+                prettier
 
     2) Users should be able to create books
         - The Book model should have the following attributes:
@@ -14,8 +19,12 @@ The requirements are as follows:
             e) Cover Photo (required, can be either a url to an external image or 
                 can use an uploaded image (bonus points!))
 
+        DONE:
     3) Users should be able to browse a book's individual page
         - This page should display all pertinent information for the book, including any reviews
+        TODO: 
+            clean up ui
+            reviews
 
     4) A user should be able to leave a review on a book's page
         - The Book Review model should have the following attributes:
@@ -27,11 +36,18 @@ The requirements are as follows:
                 - The auto-generated review should have every word capitalized based one the first sentence of the review.
             e) Review (text, required)
             f) Reviewer Name (required)
+        TODO: 
+            clean up ui
+            controller for reviews
+            insert intodb
     
     5) There should be at least two database migration files showing us how you would build out the 
        tables for the book and book review models.
+       DONE:
 
     6) All forms should be validated on both the front-end and back-end
+        TODO:
+            all
 
     7) All pages should include basic styling to make the interface clean.
         - You may use a CSS framework like Bootstrap or Materialize to provide basic styling out-of-the-box

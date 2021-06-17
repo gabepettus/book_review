@@ -29,6 +29,6 @@
             </div>
         </div>
     </div>
-    @yield('reviews')
+    @yield('review')
 </div>
 @endsection
