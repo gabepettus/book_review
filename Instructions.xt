@@ -24,7 +24,6 @@ The requirements are as follows:
         - This page should display all pertinent information for the book, including any reviews
         TODO: 
             clean up ui
-            reviews
 
     4) A user should be able to leave a review on a book's page
         - The Book Review model should have the following attributes:
@@ -38,8 +37,6 @@ The requirements are as follows:
             f) Reviewer Name (required)
         TODO: 
             clean up ui
-            controller for reviews
-            insert intodb
     
     5) There should be at least two database migration files showing us how you would build out the 
        tables for the book and book review models.
@@ -50,6 +47,7 @@ The requirements are as follows:
             all
 
     7) All pages should include basic styling to make the interface clean.
+    
         - You may use a CSS framework like Bootstrap or Materialize to provide basic styling out-of-the-box
         - OR - You may use a free theme found online
         - OR - You may choose to make your own styling decisions using vanilla CSS rules

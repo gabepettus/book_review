@@ -23,7 +23,7 @@ Route::get('/books', [BookController::class,'list']);
 Route::get('/book/{book}', [BookController::class,'details']);
 Route::post('/book', [BookController::class,'create']);
 
-Route::get('/reviews', [ReviewController::class,'list']);
+Route::get('/reviews/{book}', [ReviewController::class,'list']);
 Route::post('/review', [ReviewController::class,'create']);
 
 // Route::delete('/book/{book}', [BookController::class,'delete']);

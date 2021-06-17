@@ -7,6 +7,8 @@ use App\Models\Review;
 
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isNull;
+
 class ReviewController extends Controller
 {
      /**
@@ -28,6 +30,11 @@ class ReviewController extends Controller
      */
     public function create(Request $request)
     {
+
+        if (preg_match("/^\s*$/",$request->title) || empty($request->title)) {
+            $request->title = substr($request->review,0,10) . "...";
+        }
+
         // TODO validate
         $review = new Review;
 
@@ -41,6 +48,6 @@ class ReviewController extends Controller
 
         // need to add book id
         // return redirect('/reviews'); 
-        return redirect('/');
+        return back();
     }  
 }

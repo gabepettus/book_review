@@ -47,9 +47,8 @@
                                 <textarea name="review" id="review" class="form-control">I loved it. It was better than cats.</textarea>
                             </div>
                         </div>
-                        {{-- <div>{{ $book->id }}</div> --}}
-                        {{-- <input type="hidden" name="book_id" id="book_id" for="book_id" value="{{ $book->id }}"> --}}
-                        <input type="hidden" name="book_id" id="book_id" for="book_id" value="2">
+
+                        <input type="hidden" name="book_id" id="book_id" for="book_id" value="{{ $book->id }}">
 
                         <div class="col-sm-offset-3 col-sm-6">
                             <button type="submit" class="btn btn-default">
