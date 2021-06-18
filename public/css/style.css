@@ -1,0 +1,86 @@
+body {
+    /* image for background */
+    /* background-image: url('../images/pexels-element-digital-1370295_bookstore.jpg'); */
+    background-image: url('../images/swirl_pattern.png');
+
+    /* font parameters */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+} 
+
+
+/*
+	Ratings Stars
+	(with as little code as possible)
+*/
+.rating_span {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+.rating_span > span {
+  /* display: inline-block; */
+  position: relative;
+  width: 1.1em;
+}
+.rating_span > span:hover,
+.rating_span > span:hover ~ span {
+  color: transparent;
+}
+.rating_span > span:hover:before,
+.rating_span > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   left: 0; 
+   color: gold;
+}
+
+/* end span good */
+
+.rating_label {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+  }
+  .rating_label > label {
+    /* display: inline-block; */
+    position: relative;
+    width: 1.1em;
+  }
+  .rating_label > label:hover,
+  .rating_label > label:hover ~ label {
+    color: transparent;
+  }
+  .rating_label > label:hover:before,
+  .rating_label > label:hover ~ label:before {
+     content: "\2605";
+     position: absolute;
+     left: 0; 
+     color: gold;
+  }
+  
+/* here good */
+  
+.rating_radio {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* here below */
+.starparent{
+  font-size:0px;
+  display:block;
+}
+.starparent *{
+  font-size:initial;
+}
+.rating-label {
+  display:inline-block;
+  /* background: #eee;  */
+  background: blue; 
+  border: 1px solid; 
+}
+/* [name="rating"] { */
+  /* display: none;   */
+/* } */

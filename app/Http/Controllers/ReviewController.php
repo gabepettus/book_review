@@ -11,7 +11,7 @@ use function PHPUnit\Framework\isNull;
 
 class ReviewController extends Controller
 {
-     /**
+    /**
      * Display a list of all review.
      *
      * @return Response
@@ -21,7 +21,7 @@ class ReviewController extends Controller
         $reviews = Review::orderBy('created_at','desc')->get();
 
         return view('reviews.reviews')->with(['reviews' => $reviews ]);
-   }
+    }
 
     /**
      * Create a new review.
@@ -31,11 +31,11 @@ class ReviewController extends Controller
     public function create(Request $request)
     {
 
-        // function does not belong here
+        // TODO function does not belong here move to helper function file
+        $title = "";
         if (preg_match("/^\s*$/",$request->title) || empty($request->title)) {
             // looks like split is adding on leading and trailing space
             $titleArray = preg_split("//", $request->review);
-            $title = "";
 
             for ($i=1; $i < count($titleArray)-1; $i=$i+1) {
                 if ( preg_match("/[\.\?!]/", $titleArray[$i]) ) {
@@ -52,6 +52,8 @@ class ReviewController extends Controller
                     $title = $title . $titleArray[$i];
                 }
             }
+        } else {
+            $title = $request->title;
         }
 
         // TODO validate
