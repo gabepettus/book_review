@@ -33,6 +33,7 @@ The requirements are as follows:
             d) Title (string, max 100 characters)
                 - This field is not required but should be auto-generated if the user chooses not to enter a Title 
                 - The auto-generated review should have every word capitalized based one the first sentence of the review.
+                    
             e) Review (text, required)
             f) Reviewer Name (required)
         TODO: 

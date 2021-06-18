@@ -32,7 +32,13 @@ class ReviewController extends Controller
     {
 
         if (preg_match("/^\s*$/",$request->title) || empty($request->title)) {
-            $request->title = substr($request->review,0,10) . "...";
+            preg_match("/.+?[\.\?!]/",$request->review,$fs1);
+
+// TODO - cap first letter of sentence - walk through sting and replace strtoupper() in place
+            $request->title = implode("",$fs1);
+
+            // $fs3 = preg_split("/\s[a-z]/", $fs2);
+
         }
 
         // TODO validate
