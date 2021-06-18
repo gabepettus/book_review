@@ -31,14 +31,27 @@ class ReviewController extends Controller
     public function create(Request $request)
     {
 
+        // function does not belong here
         if (preg_match("/^\s*$/",$request->title) || empty($request->title)) {
-            preg_match("/.+?[\.\?!]/",$request->review,$fs1);
+            // looks like split is adding on leading and trailing space
+            $titleArray = preg_split("//", $request->review);
+            $title = "";
 
-// TODO - cap first letter of sentence - walk through sting and replace strtoupper() in place
-            $request->title = implode("",$fs1);
-
-            // $fs3 = preg_split("/\s[a-z]/", $fs2);
-
+            for ($i=1; $i < count($titleArray)-1; $i=$i+1) {
+                if ( preg_match("/[\.\?!]/", $titleArray[$i]) ) {
+                    // find end of sentance add  ellipses force exit of loop
+                    $title = $title . " ...";
+                    $i = count($titleArray);
+                } elseif ( $i === 1 ) {
+                    $title = $title . strtoupper($titleArray[$i]);
+                } elseif ( ($i != count($titleArray)-1 ) && ( preg_match("/\s/",$titleArray[$i])) ) {
+                    // add space and cap value to title
+                    $title = $title . $titleArray[$i] . strtoupper($titleArray[$i+1]);
+                    $i = $i+1;
+                } else {
+                    $title = $title . $titleArray[$i];
+                }
+            }
         }
 
         // TODO validate
@@ -46,7 +59,7 @@ class ReviewController extends Controller
 
         $review->book_id = $request->book_id;
         $review->rating = $request->rating;
-        $review->title = $request->title;
+        $review->title = $title;
         $review->review = $request->review;
         $review->reviewer = "anon";
 

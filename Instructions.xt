@@ -32,8 +32,10 @@ The requirements are as follows:
             c) Star Rating (integer, 1-5), required)
             d) Title (string, max 100 characters)
                 - This field is not required but should be auto-generated if the user chooses not to enter a Title 
+                DONE:
                 - The auto-generated review should have every word capitalized based one the first sentence of the review.
-                    
+                TODO:
+
             e) Review (text, required)
             f) Reviewer Name (required)
         TODO: 
