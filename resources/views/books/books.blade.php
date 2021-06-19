@@ -1,19 +1,21 @@
 @extends('layout.main')
+@include('common.errors')
 
 @section('content')
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
+                {{-- change to bootstrap accordian --}}
                 <div class="panel-heading">
                     Add A New Book For Review
+                    <a href="#" class="btn btn-xs"></a>
                 </div>
 
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
-                    @include('common.errors')
 
                     <!-- New book Form -->
-                    <form action="/book" method="POST" class="form-horizontal">
+                    <form action="/book" method="POST" class="form-horizontal" onsubmit="return validateForm()">
                         {{ csrf_field() }}
 
                         <!-- book Name -->

@@ -1,6 +1,5 @@
 {{-- resources/views/common/errors.blade.php --}}
-{{-- A single consolidate error page for now
-    TODO - clean up page --}}
+
 @if (count($errors) > 0)
     <!-- Form Error List -->
     <div class="alert alert-danger">

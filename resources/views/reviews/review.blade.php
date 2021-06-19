@@ -18,7 +18,7 @@
                     {{ csrf_field() }}
     
                     <!-- Review Name -->
-                    <div class="form-group">
+                    <div class="form-group colla">
                         <div class=row>
                             <label for="title" class="col-sm-3 control-label">Title Review</label>
                             <div class="col-sm-6">
