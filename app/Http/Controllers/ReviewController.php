@@ -8,7 +8,6 @@ use App\Http\Requests\ReviewRequest;
 use App\Models\Review;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class ReviewController extends Controller
 {
@@ -31,16 +30,16 @@ class ReviewController extends Controller
      */
     public function create(ReviewRequest $request)
     {
-            $review = new Review;
+        $review = new Review;
 
-            $review->book_id = $request->book_id;
-            $review->rating = $request->rating;
-            $review->title = $request->title;
-            $review->review = $request->review;
-            $review->reviewer = $request->reviewer;
+        $review->book_id = $request->book_id;
+        $review->rating = $request->rating;
+        $review->title = $request->title;
+        $review->review = $request->review;
+        $review->reviewer = $request->reviewer;
 
-            $review->save();
+        $review->save();
 
-            return back();
+        return back();
     }  
 }

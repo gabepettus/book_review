@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\Review;
 
+use App\Http\Requests\BookRequest;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class BookController extends Controller
 {
@@ -50,21 +51,8 @@ class BookController extends Controller
 
 
     //  Create a new task.
-    public function create(Request $request)
+    public function create(BookRequest $request)
     {
-        $validator = Validator::make($request->all(),[
-            'name' => 'required',
-            'author' => 'required',
-            'date_published' => 'required|date',
-            'photo' => 'required',
-        ]);
-
-        if ($validator->fails() ) {
-        return back()
-            ->withInput()
-            ->withErrors($validator);
-        }
-
         $book = new Book;
 
         $book->name = $request->name;
