@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <div class="col-sm-offset-2 col-sm-8">
+        <div class="col-large-8">
             <div class="panel panel-default">
                 {{-- change to bootstrap accordian --}}
                 <div class="panel-heading">
@@ -12,8 +12,8 @@
                 </div>
 
                 <div class="panel-body">
-                    <!-- Display Validation Errors -->
 
+                    {{-- todo move to its own blade --}}
                     <!-- New book Form -->
                     <form action="/book" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
@@ -70,15 +70,18 @@
                     </div>
 
                     <div class="panel-body">
-                        <table class="table table-striped book-table">
+                        <table class="table book-table">
                             <thead>
-                                <th>Book Author</th>
-                                <th>&nbsp;</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Publish Data</th>
                             </thead>
                             <tbody>
                                 @foreach ($books as $book)
                                     <tr>
                                         <td class="table-text"><div>{{ $book->name }}</div></td>
+                                        <td class="table-text"><div>{{ $book->author }}</div></td>
+                                        <td class="table-text"><div>{{ $book->date_published }}</div></td>
 
                                         <!-- book details Button -->
                                         <td>

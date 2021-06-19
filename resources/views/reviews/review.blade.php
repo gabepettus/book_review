@@ -3,7 +3,7 @@
 @section('review')
     <div class="container">
         
-    <div class="col-sm-offset-2 col-sm-8">
+    <div class="col-large-8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Add Your Own Review
@@ -27,7 +27,7 @@
                         </div>
                         <div class=row>
                             <label for="stars" class="col-sm-3 control-label">Rating</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <fieldset>
                                     <div class="rating effect">
                                         <input type="radio" id="rating-1" name="rating" value="1" /> <label class="stars" for="rating-1">☆</label>
@@ -42,7 +42,7 @@
                         <div class=row>
                             <label for="review" class="col-sm-3 control-label">Review</label>
                             <div class="col-sm-6">
-                                <textarea name="review" id="review" class="form-control">I loved it. It was better than cats.</textarea>
+                                <textarea name="review" id="review" class="form-control" placeholder="I loved it. It was better than cats."></textarea>
                             </div>
                         </div>
 
@@ -58,5 +58,6 @@
             </div>
         </div>
     </div>
+
     @yield('reviews');
 @endsection

@@ -1,7 +1,7 @@
 @extends('reviews.review')
 
 @section('reviews')
-    <div class="container">
+    <div class="col-large-8">
         @if (count($reviews) > 0)
 
             <div class="panel panel-default">
@@ -11,13 +11,22 @@
                 <div class="panel-body">
                     <table class="table table-striped book-table">
                         <thead>
-                            <th>Existing Reviews</th>
+                            <th>Reviewer</th>
+                            <th>Rating</th>
+                            <th>Title</th>
+                            <th>Review</th>
                         </thead>
                         <tbody>
                             @foreach ($reviews as $review)
                                 <tr>
-                                    <td>{{ $review-> reviewer }}<td>
-                                    <td class="table-text"><div>{{ $review-> rating }}</div></td>
+                                    <td><div>{{ $review-> reviewer }}<div></td>
+                                    <td class="table-text">
+                                        <div>
+                                            @for ($i=0;$i < $review-> rating; $i=$i+1)
+                                            ☆
+                                            @endfor
+                                        </div>
+                                    </td>
                                     <td class="table-text"><div>{{ $review-> title}}</div></td>
                                     <td class="table-text"><div>{{ $review-> review}}</div></td>
                                 </tr>
@@ -30,4 +39,5 @@
             <p> Be the first to review </p>
         @endif
     </div>
+
 @endsection

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     use HasFactory;
-        protected $fillable = [ 'id', 'book_id', 'rating', 'title', 'review', 'reviewer',
+        protected $fillable = [ 'id', 'book_id', 'rating', 'title', 'review', 'reviewer', 
     ];
 }
