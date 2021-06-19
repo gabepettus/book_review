@@ -8,8 +8,6 @@ use App\Models\Review;
 
 use App\Http\Requests\BookRequest;
 
-use Illuminate\Http\Request;
-
 class BookController extends Controller
 {
     public function index()
@@ -34,15 +32,30 @@ class BookController extends Controller
         return view('books.books')->with(['books' => Book::hydrate($exampleBooks)]);
     }
 
+
+    /**
+     * lists exiting books
+     * 
+     * @return Response
+     * 
+     * */
     public function list()
     {
         $books = Book::orderBy('Author','asc')->get();
             return view('books.books')->with(['books' => $books ]);
     }
 
+
+    /**
+     * View details of specific book with reviews
+     * takes book_id
+     *
+     * @param  unsignedBigInteger $id
+     * @return Response
+     *
+     * */
     public function details($id)
     {
-        // $reviews = Review::where('book_id',$id)->first();
         $reviews = Review::where('book_id',$id)->orderBy('created_at','desc')->get();
 
         $book = Book::whereId($id)->first();
@@ -50,7 +63,12 @@ class BookController extends Controller
     }
 
 
-    //  Create a new task.
+    /**
+     * Create a new book.
+     *
+     * @param  BookRequest  $request
+     *
+     * */
     public function create(BookRequest $request)
     {
         $book = new Book;

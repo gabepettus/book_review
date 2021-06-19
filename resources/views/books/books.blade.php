@@ -15,7 +15,7 @@
                     <!-- Display Validation Errors -->
 
                     <!-- New book Form -->
-                    <form action="/book" method="POST" class="form-horizontal" onsubmit="return validateForm()">
+                    <form action="/book" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
 
                         <!-- book Name -->

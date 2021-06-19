@@ -1,6 +1,10 @@
 Hi, Gabe!
 
 For our skills assessment, we're looking for you to build a very basic Book Review app in Laravel.
+TODO general:
+clean up comments
+more extensive testing
+tie in users
 
 The requirements are as follows:
     1) Users should be able to browse a list of existing books
@@ -19,7 +23,10 @@ The requirements are as follows:
             e) Cover Photo (required, can be either a url to an external image or 
                 can use an uploaded image (bonus points!))
 
-        DONE:
+        TODO:
+          upload photo
+          validation on url or image
+
     3) Users should be able to browse a book's individual page
         - This page should display all pertinent information for the book, including any reviews
         TODO: 
@@ -34,12 +41,14 @@ The requirements are as follows:
                 - This field is not required but should be auto-generated if the user chooses not to enter a Title 
                 DONE:
                 - The auto-generated review should have every word capitalized based one the first sentence of the review.
-                TODO:
+                DONE:
 
             e) Review (text, required)
             f) Reviewer Name (required)
         TODO: 
             clean up ui
+            pagination
+            fix star bug
     
     5) There should be at least two database migration files showing us how you would build out the 
        tables for the book and book review models.
@@ -47,7 +56,7 @@ The requirements are as follows:
 
     6) All forms should be validated on both the front-end and back-end
         TODO:
-            all
+            frontend validation
 
     7) All pages should include basic styling to make the interface clean.
     

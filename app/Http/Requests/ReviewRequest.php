@@ -34,9 +34,13 @@ class ReviewRequest extends FormRequest
 
     protected function prepareForValidation()
     {
+
         // checking to see if title is empty and if so pulling c=and capping from review
         $title = "";
         if (preg_match("/^\s*$/",$this->title) || empty($this->title)) {
+            // strip leading spaces and .'s
+            $this->review = preg_replace('/^[\.\s]+/', '', $this->review);
+
             // looks like split is adding on leading and trailing space
             $titleArray = preg_split("//", $this->review);
             
@@ -64,11 +68,9 @@ class ReviewRequest extends FormRequest
         }
         $this->title = $title;
 
-
         $this->merge([
             'title' => $title,
             'reviewer' => "Mr Hooper",
         ]);
     }
-
 }

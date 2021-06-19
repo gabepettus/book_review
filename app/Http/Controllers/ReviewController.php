@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class ReviewController extends Controller
 {
     /**
-     * Display a list of all review.
+     * Display a list of all reviews.
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class ReviewController extends Controller
     }
 
     /**
-     * Create a new review.
+     * Create a new review. redirects to originating page
      *
      * @param  Request  $request
      */
