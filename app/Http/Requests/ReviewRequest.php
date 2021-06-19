@@ -26,7 +26,7 @@ class ReviewRequest extends FormRequest
         return [
             //
             'title' => 'required|max:100',
-            'rating' => 'required',
+            'rating' => 'required|integer|min:1|max:5',
             'review' => 'required',
             'reviewer' => 'required'
         ];
