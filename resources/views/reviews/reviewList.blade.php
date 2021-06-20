@@ -1,4 +1,4 @@
-@extends('reviews.review')
+@extends('reviews.reviewAdd')
 
 @section('reviews')
     <div class="col-large-8">

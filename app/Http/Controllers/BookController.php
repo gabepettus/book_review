@@ -29,7 +29,7 @@ class BookController extends Controller
             ],
         ];
 
-        return view('books.books')->with(['books' => Book::hydrate($exampleBooks)]);
+        return view('books.bookList')->with(['books' => Book::hydrate($exampleBooks)]);
     }
 
 
@@ -42,7 +42,7 @@ class BookController extends Controller
     public function list()
     {
         $books = Book::orderBy('Author','asc')->get();
-            return view('books.books')->with(['books' => $books ]);
+            return view('books.bookList')->with(['books' => $books ]);
     }
 
 
@@ -59,7 +59,7 @@ class BookController extends Controller
         $reviews = Review::where('book_id',$id)->orderBy('created_at','desc')->get();
 
         $book = Book::whereId($id)->first();
-            return view('reviews.reviews')->with(['book' => $book, 'reviews' => $reviews ]);
+            return view('reviews.reviewList')->with(['book' => $book, 'reviews' => $reviews ]);
     }
 
 
@@ -80,6 +80,7 @@ class BookController extends Controller
 
         $book->save();
 
-        return redirect('/books');
+        // return redirect('/books');
+        return redirect('/bookList');
     }   
 }

@@ -1,6 +1,6 @@
-@extends('books.book')
+@extends('books.bookDetail')
 
-@section('review')
+@section('reviewAdd')
     <div class="container">
         
     <div class="col-large-8">
@@ -14,7 +14,7 @@
                 @include('common.errors')
     
                 <!-- New Review Form -->
-                <form action="/review" method="POST" class="form-horizontal">
+                <form action="/reviewAdd" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
     
                     <!-- Review Name -->

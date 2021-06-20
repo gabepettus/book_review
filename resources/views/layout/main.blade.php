@@ -30,7 +30,7 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ url('/books') }}">
+                <a class="navbar-brand" href="{{ url('/bookList') }}">
                     Book Review 
                 </a>
             </div>

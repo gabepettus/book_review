@@ -19,12 +19,12 @@ use App\Http\Controllers\ReviewController;
 Route::get('/', [BookController::class,'list']);
 
 // Route::get('/books', [BookController::class,'index']);
-Route::get('/books', [BookController::class,'list']);
-Route::get('/book/{book}', [BookController::class,'details']);
-Route::post('/book', [BookController::class,'create']);
+Route::get('/bookList', [BookController::class,'list']);
+Route::get('/bookDetail/{book}', [BookController::class,'details']);
+Route::post('/bookAdd', [BookController::class,'create']);
 
-Route::get('/reviews/{book}', [ReviewController::class,'list']);
-Route::post('/review', [ReviewController::class,'create']);
+Route::get('/reviewList/{book}', [ReviewController::class,'list']);
+Route::post('/reviewAdd', [ReviewController::class,'create']);
 
 // Route::delete('/book/{book}', [BookController::class,'delete']);
 
