@@ -15,7 +15,7 @@
 
                     {{-- todo move to its own blade --}}
                     <!-- New book Form -->
-                    <form action="/bookAdd" method="POST" class="form-horizontal">
+                    <form action="/bookAdd" method="POST" class="form-horizontal" onsubmit="return validateBook(this);">
                         {{ csrf_field() }}
 
                         <!-- book Name -->
@@ -23,8 +23,9 @@
                             <div class=row>
                                 <label for="name" class="col-sm-3 control-label">Title</label>
                                 <div class="col-sm-6">
-                                <input type="text" name="name" id="name" class="form-control" >
+                                    <input type="text" name="name" id="name" class="form-control" >
                                 </div>
+                                <div><span  id="errBookName"></span></div>
                             </div>
 
                             <div class=row>
@@ -32,6 +33,7 @@
                                 <div class="col-sm-6">
                                     <input type="text" name="author" id="author" class="form-control">
                                 </div>
+                                <div><span  id="errAuthor"></span></div>
                             </div>
 
                             <div class=row>
@@ -52,6 +54,7 @@
                         <!-- Add book Button -->
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
+                                {{-- <button type="submit" class="btn btn-default"> --}}
                                 <button type="submit" class="btn btn-default">
                                     <i class="fa fa-btn fa-plus"></i>Add book
                                 </button>

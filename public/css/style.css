@@ -8,3 +8,9 @@ body {
     font-size: 1.2em;
 } 
 
+.error {
+    background-color:#f2bdbd;
+}
+.errormsg {
+    color: #f2bdbd;
+}

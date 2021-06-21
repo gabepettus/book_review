@@ -2,17 +2,14 @@ Hi, Gabe!
 
 For our skills assessment, we're looking for you to build a very basic Book Review app in Laravel.
 TODO general:
-clean up comments
+implement unit tests
 more extensive testing
-tie in users
 
 The requirements are as follows:
     1) Users should be able to browse a list of existing books
         TODO: 
             clean up ui
                 pagination
-                complete data
-                prettier
 
     2) Users should be able to create books
         - The Book model should have the following attributes:
@@ -24,13 +21,16 @@ The requirements are as follows:
                 can use an uploaded image (bonus points!))
 
         TODO:
+            display photo
           upload photo
           validation on url or image
 
     3) Users should be able to browse a book's individual page
         - This page should display all pertinent information for the book, including any reviews
         TODO: 
-            clean up ui
+           accordian
+           sorting
+           pagination
 
     4) A user should be able to leave a review on a book's page
         - The Book Review model should have the following attributes:
@@ -46,17 +46,16 @@ The requirements are as follows:
             e) Review (text, required)
             f) Reviewer Name (required)
         TODO: 
-            clean up ui
+            accordian
+            sorting
             pagination
-            fix star bug
     
     5) There should be at least two database migration files showing us how you would build out the 
        tables for the book and book review models.
        DONE:
 
     6) All forms should be validated on both the front-end and back-end
-        TODO:
-            frontend validation
+        DONE: ish
 
     7) All pages should include basic styling to make the interface clean.
     
@@ -76,3 +75,4 @@ Additional Notes:
       about writing it.
 
     - User authentication is NOT required for this exercise. Anonymous interaction is fine.
+        TODO: tie into user model vs hardcoded
