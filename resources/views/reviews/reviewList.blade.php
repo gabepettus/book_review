@@ -36,7 +36,11 @@
                 </div>
             </div>
         @else
-            <p> Be the first to review </p>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Be the first to review</h3>
+                </div>
+            </div>
         @endif
     </div>
 

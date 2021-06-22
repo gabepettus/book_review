@@ -6,7 +6,6 @@ use App\Models\Book;
 use App\Models\Review;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
 
 class DatabaseSeeder extends Seeder
 {
