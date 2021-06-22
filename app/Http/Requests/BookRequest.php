@@ -27,7 +27,8 @@ class BookRequest extends FormRequest
             'name' => 'required',
             'author' => 'required',
             'date_published' => 'required|date',
-            'photo' => 'required'
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            // 'photo' => 'required'
         ];
     }
 }

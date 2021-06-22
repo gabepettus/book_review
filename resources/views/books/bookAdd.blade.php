@@ -15,7 +15,7 @@
 
                     {{-- todo move to its own blade --}}
                     <!-- New book Form -->
-                    <form action="/bookAdd" method="POST" class="form-horizontal" onsubmit="return validateBook(this);">
+                    <form action="/bookAdd" method="POST" enctype="multipart/form-data" class="form-horizontal" onsubmit="return validateBook(this);">
                         {{ csrf_field() }}
 
                         <!-- book Name -->
@@ -46,7 +46,7 @@
                             <div class=row>
                                 <label for="photo" class="col-sm-3 control-label">Photo</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="photo" id="photo" class="form-control">
+                                    <input type="file" name="photo" id="photo" class="form-control">
                                 </div>
                             </div>
                         </div>

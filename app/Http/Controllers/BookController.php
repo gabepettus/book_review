@@ -71,16 +71,18 @@ class BookController extends Controller
      * */
     public function create(BookRequest $request)
     {
+
+        $photoName = time().'.'.$request->photo->extension();
+        
         $book = new Book;
 
         $book->name = $request->name;
         $book->author = $request->author;
         $book->date_published = $request->date_published;
-        $book->photo = $request->photo;
+        $book->photo = $request->photo->storeAs('bookImages',$photoName);
 
         $book->save();
 
-        // return redirect('/books');
         return redirect('/bookList');
     }   
 }

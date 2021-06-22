@@ -8,8 +8,12 @@
             <div class="panel-heading">
                 Book Details
             </div>
-            {{--add image infront of panel  --}}
+
             <div class="panel-body">
+            {{--add image infront of panel  --}}
+                {{-- <img src="{{URL::asset( $book->photo) }}" alt="Picture of Book Cover" height="200" width="200"> --}}
+                <img src="/{{$book->photo}}" alt="Picture of Book Cover" height="200" width="200">
+
                 <table class="table table-striped book-table">
                     <tbody>
                         <tr>
